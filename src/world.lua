@@ -2,7 +2,7 @@
 World = Object:extend()
 
 -- World Constructor
-function World:new(rho_air, rho_sea, vel_air, vel_sea)
+function World:new(rho_air, rho_sea, vel_air, vel_sea, boat)
     
     -- World Physics
     self.rho_air = rho_air
@@ -15,7 +15,7 @@ function World:new(rho_air, rho_sea, vel_air, vel_sea)
     -- Boat (Area of sail, keel, above, below, and mass)
     local lift_ratio = 200
     local sail_keel_ratio = 10
-    self.boat = Boat(8, 8 / sail_keel_ratio, 8 / lift_ratio, 8 / lift_ratio, 1)
+    self.boat = boat
 
 end
 
