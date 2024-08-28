@@ -49,7 +49,6 @@ function World:draw()
     love.graphics.circle("fill", x, y, 5)
 
     -- Draw Air Velocity
-    print('Here')
     love.graphics.setColor(255, 0, 0)
     local vel_air = self.vel_air:value({x, y})
     love.graphics.line(x, y, x + vel_air[1], y + vel_air[2])
