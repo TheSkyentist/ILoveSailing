@@ -21,8 +21,8 @@ function Boat:new(Asail, Akeel, Aabove, Abelow, mass)
     self.mass = mass -- Mass of the boat
 
     -- Sail and Keel Angle
-    self.sail_angle = 180 + 50 - 15 -- Degrees
-    self.keel_angle = 180 + 50 -- Degrees
+    self.sail_angle = 180 -- Degrees
+    self.keel_angle = 180 + 45 -- Degrees
    
 end
 

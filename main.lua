@@ -12,22 +12,22 @@ function love.load()
     pxpm = 10 -- pixels/meter
 
     -- Create boat
-    local Asail = 8 * (pxpm ^ 2)
-    local sail_keel_ratio = 10
+    local Asail = 8 * (pxpm ^ 2) -- m^2
+    local sail_keel_ratio = 700
     local lift_ratio = 200
     local boat = Boat(
         Asail, -- Area Sail
         Asail / sail_keel_ratio, -- Area Keel
         8 / lift_ratio, -- Area Above
         8 / lift_ratio, -- Area Below
-        100 -- Mass 
+        150 -- Mass [kg]
     )
 
     -- Create constant quantities
-    local rho_air = ConstantField(1 / 700) -- kg/m^3
-    local rho_sea = ConstantField(1.0) -- kg/m^3
-    local vel_air = ConstantField({0.0, 30.0 * pxpm}) -- m/s
-    local vel_sea = ConstantField({0.0, 0.0}) -- m/s
+    local rho_air = ConstantField(1 / 700) -- kg/m^3 (Not affected by scale)
+    local rho_sea = ConstantField(1.0) -- kg/m^3 (Not affected by scale)
+    local vel_air = ConstantField({0.0 * pxpm, 30.0 * pxpm}) -- m/s
+    local vel_sea = ConstantField({1.5 * pxpm,  0.0 * pxpm}) -- m/s
 
     -- Create world
     world = World(rho_air, rho_sea, vel_air, vel_sea, boat)
@@ -42,6 +42,4 @@ end
 -- Update game state
 function love.update(dt)
     world:update(dt)
-    -- Force exit
-
 end 
