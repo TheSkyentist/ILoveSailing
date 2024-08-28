@@ -13,7 +13,7 @@ function love.load()
 
     -- Create boat
     local Asail = 8 * (pxpm ^ 2) -- m^2
-    local sail_keel_ratio = 700
+    local sail_keel_ratio = 400
     local lift_ratio = 200
     local boat = Boat(
         Asail, -- Area Sail

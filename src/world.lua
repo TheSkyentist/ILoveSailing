@@ -58,6 +58,10 @@ function World:draw()
     local vel_sea = self.vel_sea:value({x, y})
     love.graphics.line(x, y, x + vel_sea[1], y + vel_sea[2])
 
+    -- Draw FP
+    love.graphics.setColor(255, 255, 255)
+    love.graphics.print("FPS:"..tostring(love.timer.getFPS()), 9 * x, y)
+
     -- Draw Boat
     self.boat:draw()
 
